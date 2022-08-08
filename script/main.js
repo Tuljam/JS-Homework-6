@@ -95,7 +95,7 @@ const numbers = [7, -4, 32, -90, 54, 32, -21]
 function sortPlus (item) {
     if(item>=0) {
         return item
-        console.log(item)
+        // console.log(item)
     }
 }
 console.log(numbers.filter(sortPlus))
@@ -124,15 +124,64 @@ console.log (plusResult)
 
 // > Реализуйте решение двумя способами, используя `function declaration` & `arrow function`.
 
+// Решение
+const fibonaccI = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]
+
+let red = fibonaccI.reduce ((previousValue,item) =>{
+    return item +previousValue},0)
+console.log(red)
+
+
+
+let fobo = fibonaccI.reduce (function(previousValue,item) {
+    return  item = previousValue +item;
+})
+console.log(fobo)
+
+
+function fibo(a,b) {
+    return a +b}
+    console.log(fibonaccI.reduce(fibo))
+
+// не работает, почему?
+        fibonaccI.reduce (function(previousValue,item) {
+        return  item=previousValue+item ;
+         console.log(previousValue,item)
+    })
+   
+
 // #### Task 5 🖥
 
 // Используя метод **`find`** найдите в массиве первое четное число.
-
+//Используя метод **`find`** найдите в массиве первое четное число.
 // ```javascript
 //     const numbers = [5, 9, 13, 24, 54, 10, 13, 99, 1, 5]
 // ```
 
 // > Реализуйте решение двумя способами, используя `function declaration` & `arrow function`.
+
+const numberS = [5, 9, 13, 24, 54, 10, 13, 99, 1, 5]
+// 1 способ
+let resultNum= numberS.find (function(value) {
+    if (value % 2 ===0)
+    return value
+})
+console.log(resultNum)
+// 2 способ
+let resultNumElse = numberS.find( (value) => {
+    if(value % 2 === 0) 
+    return value;
+})
+console.log(resultNumElse)
+// 3 способ
+
+function resultNumPlus (item) {
+    if( item % 2 === 0) {
+        return item
+    }
+}
+console.log(numberS.find(resultNumPlus))
+
 
 // ### ADVANCED level
 
