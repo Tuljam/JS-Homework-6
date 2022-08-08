@@ -143,12 +143,12 @@ function fibo(a,b) {
     return a +b}
     console.log(fibonaccI.reduce(fibo))
 
-// не работает, почему?
-        fibonaccI.reduce (function(previousValue,item) {
+// лучше  не использовать
+        console.log(fibonaccI.reduce (function(previousValue,item) {
         return  item=previousValue+item ;
-         console.log(previousValue,item)
-    })
-   
+        }
+        ))
+
 
 // #### Task 5 🖥
 
